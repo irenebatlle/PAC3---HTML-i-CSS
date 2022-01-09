@@ -1,0 +1,749 @@
+/*** ESTILS GENERALS ***/
+*{
+    margin:0; /*Es treuen marges que es generen per defecte en html*/
+    padding:0; /*Es treuen els paddings que es generen per defecte en html*/
+    box-sizing: border-box; /*Es treu el model de caixa box-sizing:content-box que s'estableix per defecte. Amb box-sizing:border-box s'inclouen les vores i els paddings quan es dimensiona una caixa.*/
+} 
+:root{
+    --color-text: rgb(0,0,0);
+    --color-text2: rgb(255,255,255);
+    --color-contrast: rgb(189,55,0);
+    --background-color: rgb(244,244,244);
+    --background-formulari: rgb(242,232,228);
+    --background-fosc: rgb(0,0,0);
+}
+body{ 
+    background-color: var(--background-color); /*Color de fons pel body de totes les pàgines*/
+    font-family: 'Raleway', sans-serif; /*Font tipogràfica*/
+}
+/*** CAPÇALERES ***/
+
+/*Capçalera >index.html*/
+#header-index{ 
+    width: 100%; /*Amplada*/
+    height: auto; /*Alçada*/
+    background-color: white; /*Color de fons*/
+    padding-top: 20px; /*Espaiat superior*/
+    padding-bottom: 15px; /*Espaiat inferior*/
+
+}
+
+/* Capçalera >simptomes.html, videos.html, cop26.html */
+#header-2{ 
+    width: 100%; /*Amplada*/
+    height: auto; /*Alçada*/
+    background-color: white; /*Color de fons*/
+    box-shadow: 0px 0px 2px rgb(200, 200, 200); /*Sombra inferior*/
+    padding-top: 20px; /*Espaiat superior*/
+    padding-bottom: 15px; /*Espaiat inferior*/
+} 
+
+    /* Mesures pel contingut de les capçaleres */
+    .capçalera{
+        width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <body>*/
+        margin: auto; /*Es reparteixen els marges a tots dos costats*/
+        
+    }
+
+    /* Menú de navegació */
+    .menu-capçalera{
+        position: sticky; /*Posició fixe pel menú de navegació > no funciona!?>*/
+        top: 0;
+        padding-top: 10px;
+        
+    }
+    .menu-capçalera ul li{
+        display: inline; /*Es col·loquen els enllaços del menú un al costat de l'altre; i no en format llista*/
+        padding-right: 12px; /*Espai entre els enllaços del menú*/
+        
+    }
+    .menu-capçalera ul li a{ /*Estil pels enllaços del menú*/
+        color: var(--color-text); /*Color de l'enllaç*/
+        font-size: 0.75rem; /*Mida del cos de text*/
+        font-weight: 800; /*Pes de la font*/
+        letter-spacing: 0.03rem; /*Interlletrat*/
+        text-decoration: none; /*Es treu la línia de subratllat per defecte dels enllaços*/
+    }
+    .menu-capçalera ul li a:hover{ /*Estil pels enllaços en l'estat :hover (ratolí damunt)*/
+        color: rgba(0, 0, 0, 0.5); /*Amb el ratolí damunt, els enllaços canvien de color*/
+    }
+    #menu-actiu{ /*Estil pels enllaços seleccionats*/
+        color: var(--color-contrast); 
+    }
+
+        /* Tipografia (menú de navegació) */
+        .lema{
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--color-text);
+        }
+        .titular{ /*1,5ºC*/
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-text);
+            text-decoration: none; /*Es treu el subratllat per defecte*/
+            margin-bottom: 50px;
+        }
+        .titular:hover{ /*Estil per l'enllaç en l'estat :hover (ratolí damunt)*/
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+/*** CONTINGUT CENTRAL ***/
+
+/** INDEX.html **/
+
+    /* Secció 1 */
+    .section-1{
+        display:inline-block;
+        position: relative; /*Permet posicionar el títol <h1> (position: absolute) damunt*/
+        }
+
+        /* Imatge */
+        img.crop{ /*Caixa que conté la imatge de la secció*/
+            width: 100%;
+            height: 300px; /*S'estableix una altura de 300px*/
+            object-fit: cover; /*La imatge s'ajusta per omplir el quadre de contingut*/
+        }
+
+    /* Secció 2 i Secció 3 */
+    .section-2, .section-3{ 
+        width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <body>*/
+        margin: auto; /*Es reparteixen els marges a tots dos costats perquè quedi centrat*/
+        margin-top: 50px;
+    }
+
+    /* Secció 3 */
+    .container-articles{ /* Caixa dins la secció "Notícies" (.section-3) */
+        display: grid; /*Disposició de la secció en columnes*/
+        grid-template-columns: 1fr 1fr 1fr; /*3 columnes*/
+        grid-gap: 20px; /*Separació entre columnes*/
+        margin-bottom: 50px;
+        }
+
+        /* Articles */   
+        
+            /* Imatges */
+            .img-noticia{
+                width: 100%;
+            }
+                figcaption{ /*Peu de foto (data)*/
+                    font-size: 0.7rem;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                }
+
+            /* Text */
+            .titular-noticia{ /*Enllaç titular*/
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--color-contrast);
+                text-decoration: none; /*Es treu el subratllat per defecte*/
+            }
+            .titular-noticia:hover{ /*Estil per l'enllaç en l'estat :hover (ratolí damunt)*/
+                color: var(--color-text);
+            }
+            .entrada-noticia{ /*Estil pel text <p> de l'<artcile>*/
+                font-size: 0.75rem;
+                font-weight: 400;
+                line-height: 1.2rem;
+                color: var(--color-text);
+                margin-top: 5%;
+            }
+            .enllaç-noticia{ /*Enllaç llegir-ne més*/
+                font-size: 0.7rem;
+                font-weight: 600;
+                color: var(--color-contrast);
+                text-decoration-style: dotted; /*Vora inferior estil línia de punts*/
+            }
+            .enllaç-noticia:hover{ /*Estil per l'enllaç en l'estat :hover (ratolí damunt)*/
+                color: rgb(0, 0, 0);
+            }
+
+    /* Secció 4 */
+    .section-4{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <body>*/
+        background-color: var(--background-formulari); /*Color de fons*/
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+        /* Formulari */
+
+        /* Estils generals */
+        form{
+            width: 30%; /*S'estableix una amplada del 30% respecte el 100% total del la .section-4>*/
+            margin: auto;
+        }
+        li{
+            list-style: none; /*Es treuen els punts per defecte de les llistes que estructuren els formularis*/
+        }
+        ::placeholder{ /*Pseudolement placeholder: text provisional de l'element <input>*/
+            font-size: 1em; /*Cos de text*/
+            font-weight:400; /*Pes de la font*/
+        }
+
+        /* Camps de text */
+        input[type=text],[type=email]{ 
+            width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <form>*/
+            height: 6vh; /*Alçada*/
+            border: 0.05rem solid black;
+            margin-bottom: 10px;
+            padding-left: 14px; /*Espaiat a l'esquerre*/
+        }
+
+        /* Política de privacitat */
+        form p{ /*Estil pel text <p> del <form>*/
+            font-size: 7px;
+            line-height: 0.8rem;
+        }
+        .enllaç-politica{ /*Enllaços en el text*/
+            color: var(--color-contrast);
+            text-decoration: none; /*Es treu el subratllat per defecte*/
+        }
+        .enllaç-politica:hover{ /*Estil pels enllaços en l'estat :hover (ratolí damunt)*/
+        color: var(--color-text);
+        text-decoration: underline; /*Subratllat*/
+        }
+        label{ /*Estil per l'etiqueta del checkbox*/
+            vertical-align: middle; /*Alineació vertical de l'etiqueta amb la casella del checkbox*/
+            font-size: 7px;
+        }
+
+        /* Botó enviar */
+        input[type=submit]{
+            display: block; /*Disposició en "block" perquè es col·loqui en una línia nova sota els altres elements del <form>*/
+            font-weight: 400;
+            text-transform: uppercase; /*Estil del text: MAJÚSCULES*/
+            color: var(--color-text2);
+            letter-spacing: 0.5px;
+            background-color: var(--color-contrast);
+            border-style: none; /*Es treu la vora per defecte del botó*/
+            padding:10px 18px 10px 18px;
+            margin-top: 15px;
+        }
+        input[type=submit]:hover{ /*Estil pel botó en l'estat :hover (ratolí damunt)*/
+            background-color: var(--color-text);
+        }
+
+/** SIMPTOMES.html **/
+.simptomes{
+    width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <form>*/
+    margin: auto; /*Es reparteixen els marges a tots dos costats*/
+}
+
+    /* <div> esquerre */
+    .flexbox-simptomes-start{ 
+        display: flex; /*Disposició flexible dels elements*/
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <div> .simptomes*/
+        align-items: flex-start; /*Alineació de les caixes a l'esquerra (start)*/
+        flex-direction: column; /*Direcció de l'eix principal: de l'extrem superior al final de la pàgina)*/
+    }
+
+    /* <div> dreta */
+    .flexbox-simptomes-end{ 
+        display: flex; /*Disposició flexible dels elements*/
+        width: 100%;
+        align-items: flex-end; /*Alineació de les caixes a la dreta (end)*/
+        flex-direction: column; /*Direcció de l'eix principal: de l'extrem superior al final de la pàgina)*/
+        
+    }  /* Apartats */
+        .apartat{
+            display: flex; /*Disposició flexible dels elements*/
+            width: 65%; /*S'estableix una amplada del 65% respecte el 100% total del <div> .flexbox-simptomes-start/end*/
+            height: auto;
+            flex-direction: row; /*Direcció de l'eix principal: d'esquerra a dreta*/
+            background-color: white; /*Color de fons*/
+            border-radius: 3px; /*Arrodoniment de vora*/
+            margin-bottom: 20px;
+            margin-top: 10px;
+            padding: 12px;        
+        }
+        .apartat-imatge{
+            flex: 1; /*Proporció d'espai que ocupa la imatge = espai que ocupa el text*/
+        }
+            .imatge-simptoma{
+                display: block; 
+                width: 100%;
+                height: 175px;
+            }
+        .apartat-text{
+            flex: 1; /*Proporció d'espai que ocupa la imatge = espai que ocupa el text*/
+            padding-left: 12px;
+        }
+            .apartat-text p{
+                font-size: 0.65rem;
+                line-height: 1rem;
+            }
+            h3{
+                font-weight: 600;
+                font-size: 1rem;
+                padding-bottom: 3px;
+            }
+            .enllaç-simptoma{ /*Enllaç "+ sobre Símtptomax"*/
+                font-size: 0.7rem;
+                font-weight: 600;
+                color: var(--color-contrast);
+                text-decoration-style: dotted; /*Vora inferior estil línia de punts*/
+            }
+            .enllaç-simptoma:hover{ /*Estil per l'enllaç en l'estat :hover (ratolí damunt)*/
+                color: rgb(0, 0, 0);
+            }
+
+/** VIDEOS.html **/
+.container-videos{
+    display: grid; /*Disposició del contingut en columnes*/
+    width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <body>*/
+    grid-template-columns: 1fr 1fr; /*2 columnes*/
+    grid-gap: 20px; /*Separació entre columnes*/
+    align-items: center; /*Alineació dels elements al centre de cada columna*/
+    margin: auto;
+    margin-bottom: 80px;
+}
+.grid-item{
+    background-color: white; /*Color de fons*/
+    text-align: center; /*Alineació del text al centre*/
+    margin-top: 10px;
+}
+    /* Vídeos */
+    iframe{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <div> .grid-item*/
+        height: 250px; /*Alçada*/
+    }
+
+    /* Text */
+    .italic{
+        font-style: italic;
+        font-weight: 600;
+    }
+
+/** COP26.html **/
+.container-cop26{
+    display: grid; /*Disposició del contingut en columnes*/
+    width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <body>*/
+    grid-template-columns: 1.5fr 2fr; /*2 columnes de diferent proporció*/
+    grid-gap: 50px; /*Separació entre columnes*/
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+.grid-item-2{
+    margin-top: 10px;
+}
+    /* <div> esquerre */
+
+    /* Imatge */
+    .logo-cop26{
+        width: 90%; /*S'estableix una amplada del 90% respecte el 100% total del <div> .grid-item-2*/
+        align-items: left; /*Alineació dels elements a l'esquerre de cada columna*/
+    }
+    /* Text */
+    dl{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <div> .grid-item-2*/
+    }
+        /* Llista de definició */
+        dt{ /*Especificacions (títols)*/
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        dd{ /*Descripcions*/
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+        }
+        .enllaç-cop26{ /*Enllaç de la llista*/
+            color: var(--color-contrast);
+            text-decoration: none; /*Es treu el subratllat per defecte*/
+        }
+        .enllaç-cop26:hover{ /*Estil per l'enllaç en l'estat :hover (ratolí damunt)*/
+            color: var(--color-text);
+            text-decoration: underline; /*Subratllat*/
+        }
+    
+    /* <div> dreta */
+    
+    /* Text */
+    .resultats{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <div> .grid-item-2*/
+    }
+        .resultats p, ol li{
+            font-size: 0.8rem;
+            line-height: 1.2rem;
+            margin-top: 10px;
+            list-style: decimal; /*S'afegeix númeració decimal (1,2,3,4) a la llista*/
+        }
+        .resultats ol{
+            margin-left: 30px; /* Es desplaça la llista dins el text 30px a la dreta*/
+            
+        }
+    
+    /* Cites */
+    blockquote{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <div> .grid-item-2*/
+        margin-top: 20px;
+        padding: 10px;
+        border-left: 4px solid rgb(189, 55, 0); /*Vora lateral esquerra del contenidor <blockquote>*/
+        background-color: white; /*Color de fons del contenidor <blockquote>*/
+    }
+        /*Text*/
+        blockquote p { 
+            font-size: 0.8rem; 
+            font-style: italic; /*Estil de la font: cursiva*/
+            line-height: 1.2rem;
+        }
+        blockquote cite {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+/*** PEU DE PÀGINA ***/
+footer{ 
+    width: 100%; /*Amplada*/
+    height: auto;
+    background: var(--background-fosc); /*Color de fons*/
+}
+
+/* Mesures pel contingut del peu de pàgina */
+.peu-pagina{
+    width: 60%; /*S'estableix una amplada del 60% respecte el 100% total del <body>*/
+    margin: auto; /*Es reparteixen els marges a tots dos costats perquè quedi centrat*/
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+    /* Menú de navegació */
+    .menu-legal{
+        padding-top: 10px;
+    }
+    .menu-legal ul li{
+        display: inline; /*Es col·loquen els enllaços del menú un al costat de l'altre; i no en format llista*/
+        padding-right: 5px; /*Espai entre els enllaços del menú*/
+    }
+    .menu-legal ul li a{ /*Estil pels enllaços del menú*/
+        color: var(--color-text2); /*Color de l'enllaç*/
+        font-size: 0.8rem; /*Mida del cos de text*/
+        font-weight: 400;
+        text-decoration: none; /*Es treu la línia de subratllat per defecte dels enllaços*/
+    }
+    .menu-legal ul li a:hover{ /*Estil pels enllaços en l'estat :hover (ratolí damunt)*/
+        color: var(--color-contrast); /*Amb el ratolí damunt, els enllaços canvien de color*/
+    }
+    .menu-legal ul li::before{
+        content: "•"; /*S'afegeix aquest símbol entre ítems*/
+        padding-right: 8px;
+        color: white;
+    }
+    .menu-legal ul li:nth-child(1)::before{ /*Es treu el símbol de davant del primer ítem*/
+        display: none;
+    }
+
+    /* Menú de xarxes socials (botons) */
+    .menu-xarxes{
+        margin-top: 18px;
+    }
+    .menu-xarxes li{
+        display: inline; /*Es col·loquen les icones del menú un al costat de l'altre; i no en format llista*/
+    }
+    .menu-xarxes img{
+        width: 18px;
+        height: auto;
+        vertical-align: middle; /* Alineació centrada i vertical de les icones respecte elles mateixes*/
+    }
+    .menu-xarxes img:hover{ /*Estil per l'enllaç de les icones en l'estat :hover (ratolí damunt)*/
+        opacity: 0.7;
+    }
+
+    /*Estil pel text <p> del peu de pàgina*/
+    .peu-pagina p{
+        font-size: 0.8rem; /*Mida del cos de text*/
+        font-weight: 400; /*Pes de la font*/
+        margin-top: 15px; /*Espaiat superior*/
+        color: var(--color-text2);
+    }
+
+/** TIPOGRAFIA (contingut principal) **/
+
+/*Títols*/
+h1{
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 5rem;
+    color: var(--color-text2);
+    position: absolute; /*Per posicionar el títol damunt de la imatge*/
+    top: 60px;
+    left: 20%; /*Marges del 20% respecte el 100% total del <body>*/
+    right: 20%;
+}
+h2{
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--color-text);
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Paràgrafs */
+p{
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+.negreta{ /* Estil pel text <span class="negreta">*/
+    font-weight: 600;
+}
+
+
+/*** RESPONSIVE > Estils per la visualització del contingut en dispositius petits***/
+
+ /* En el menú de navegació i en el peu de pàgina es centren els elements verticalment a la pàgina i es disposen un sota l'altre */
+ /* El contingut central s'organitza en una 1 column i s'augmenten els cossos de text. També es modifiquen els diversos marges i paddings entre elements. Els marges laterals es redueixen notablement. */
+
+@media (max-width: 600px) {
+
+    /*** CAPÇALERA ***/
+    .capçalera{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+        /* Menú de navegació */
+        .menu-capçalera ul li{
+            display: block; /*Es col·loquen els enllaços del menú en format llista; un sota l'altre*/
+        }
+        .menu-capçalera ul li a{ /*Estil pels enllaços del menú*/
+            font-size: 1.2rem; 
+            line-height: 1.8rem;
+        }
+    
+    /*** CONTINGUT CENTRAL ***/
+
+    /** INDEX.html **/
+
+        /* Secció 2 i Secció 3 */
+        .section-2, .section-3{ 
+            margin-top: 10px;
+            margin-bottom: 100px;
+        }
+        .section-2, .section-3{
+            width: 94%; /*S'estableix una amplada del 94% respecte el 100% total del <body>*/
+        }
+
+        /* Secció 3 */
+        .container-articles{
+            width: 100%;
+            grid-template-columns: 1fr; /*1 columna*/
+        }
+        /* Articles*/
+        
+        article{
+            margin-bottom: 20px;
+        }
+            /*Imatges*/
+            figcaption{
+                font-size: 1rem;
+                margin-top: 3%;
+                margin-bottom: 3%;
+            }
+
+            /*Text*/
+            .titular-noticia{ /*Enllaç titular*/
+                font-size: 1.5rem;
+            }
+            .entrada-noticia{ /*Estil pel text <p> de l'article*/
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                margin-top: 10px;
+                margin-bottom: 18px;
+            }
+            .enllaç-noticia{ /*Enllaç llegir-ne més*/
+                font-size: 1.2rem;
+            }
+
+        /* Secció 4 */
+        .section-4{
+            padding-bottom: 90px;
+        }
+
+            /* Formulari */
+
+            /* Estils generels */
+            form{
+                width: 90%; /*S'estableix una amplada del 90% respecte el 100% total de la .section-4*/
+            }
+
+            /* Camps de text */
+            input[type=text],[type=email]{ 
+                height: 50px; 
+                font-size: 1.2em; 
+            }
+
+            /* Política de privacitat */
+            form p{
+                font-size: 0.8rem;
+                line-height: 1.2rem;
+            }
+            label{ /*Estil per l'etiqueta del checkbox*/
+                font-size: 0.8rem;
+            }
+
+            /* Botó enviar */
+            input[type=submit]{
+                width: 40%; /*Es redimensiona el botó > es fa més gran>*/
+                height: 60px;
+                font-size: 1.2em;
+            }
+
+    /** SIMPTOMES.html **/
+    .simptomes{
+        width: 100%; /*S'estableix una amplada del 100% respecte el 100% total del <form>*/
+        margin: auto;
+        margin-bottom: 80px;
+    }
+    .apartat{
+        width: 94%; /*S'estableix una amplada del 94% respecte el 100% total del <div .flexbox-simptomes-start/end>*/
+        flex-direction: column; /*Es distribueixen els apartats en 1 columna, de manera que text i imatge queden un sota l'altre*/
+        margin: auto;
+        margin-top: 20px;
+        padding-top: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+        .imatge-simptoma{
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+        }
+        .apartat-text{
+            flex: 1; /*Proporció d'espai que ocupa el text = espai que ocupa la imatge*/
+            padding-top: 15px;
+        }
+            .apartat-text p{
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+            h3{
+                font-weight: 600;
+                font-size: 1.4rem;
+                padding-bottom: 1%;
+            }
+            .enllaç-simptoma{
+                font-size: 1rem;
+            }
+
+    /** VIDEOS.html **/
+    .container-videos{
+        width: 94%; /*S'estableix una amplada del 94% respecte el 100% total el <body>*/
+        grid-template-columns: 1fr; /*1 columna*/
+    }
+        /* Vídeos */
+        iframe{
+            width: 100%;
+            height: 315px;
+        }
+
+    /** COP36.html **/
+    .container-cop26{
+        width: 94%; /*S'estableix una amplada del 94% respecte el 100% total el <body>*/
+        grid-template-columns: 1fr; /*1 columna*/
+    }
+    /* <div> esquerre */
+
+        /* Imatge */
+        .logo-cop26{
+            width: 75%;
+        }
+
+        /* Text */
+        dt{
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        dd{
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+            margin-bottom: 22px;
+        }
+    
+    /* <div> dreta */
+
+        /* Text */
+        .resultats p, ol li{
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+            margin-top: 20px;
+        }
+        .resultats ol{
+            margin-left: 40px;    
+        }
+        /* Cites */
+        blockquote{
+            margin-top: 20px;
+            padding: 20px;
+            }
+            blockquote p {
+                font-size: 1.2rem; 
+                line-height: 1.8rem;
+            }
+            blockquote cite {
+                font-size: 1.2rem;
+            }
+
+    /*** PEU DE PÀGINA ***/
+    .peu-pagina{
+        width: 94%; /*S'estableix una amplada del 94% respecte el 100% total el <body>*/
+        text-align: center; /*Alineació vertical i al centre dels elements*/
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+        /* Menú de navegació */
+        .menu-legal ul li{
+            display: block; /*Disposició en "block" perquè els elements es col·loqui en una línia nova un sota l'altre*/
+        }
+        .menu-legal ul li a{ /*Estil pels enllaços del menú*/
+            font-size: 1.2rem; /*Mida del cos de text*/
+        }
+        .menu-legal ul li::before{
+            content: none; /*Es treu el símbol "·" que separa els ítems del menú*/
+        }
+
+        /* Menú de xarxes (botons) */
+        .menu-xarxes{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .menu-xarxes img{
+            width: 25px;
+        }
+
+        /*Estil pel text <p> del peu de pàgina*/
+        .peu-pagina p{
+            font-size: 1.2rem; 
+            line-height: 1.8rem;
+        }
+ 
+    /** TIPOGRAFIA (contingut principal) **/
+
+    /* Títols */
+    h1{
+        font-size: 3rem;
+        line-height: 4rem;
+        top: 50px;
+        left: 3%;
+        right: 3%;
+    }
+    h2{
+        margin-top: 50px;
+    }
+    h4{
+        font-size: 1.5rem;
+    }
+}
