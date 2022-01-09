@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="cat">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Índex</title>
+        <!-- Tipografies-->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+        <!-- Estils css -->
+        <link rel="stylesheet" href="CSS/estils.css">
+    </head>
+    <body>
+        <header id="header-index">
+            <div class="capçalera">
+                <div class="lema">NO HI HA PLANETA B</div>
+                <a href="index.html" class="titular">1,5 ºC</a>
+                <nav class="menu-capçalera">
+                    <ul>
+                        <li><a href="simptomes.html">SÍMPTOMES DEL CANVI CLIMÀTIC</a></li>
+                        <li><a href="videos.html">VÍDEOS</a></li>
+                        <li><a href="cop26.html">COP26</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <!-- Secció 1 -->
+            <section class="section-1">
+                <img src="img/bg-hero-home.jpg" class="crop" alt="imatge-portada-foc"/>
+                <h1>La crisi climàtica, una carrera que podem guanyar?</h1>
+            </section>
+            <!-- Secció 2 -->
+            <section class="section-2">
+                <h2>Què és Un grau i mig?</h2>
+                <p>L'acord de París de 2015 sobre el canvi climàtic exigeix que l’escalfament global es mantingui per sota d'1,5 graus centígrads. S'està fent tot el que es pot al respecte?</p>
+                <p>A Un grau i mig estem preocupats pel canvi climàtic i des d'aquí us volem mantenir informats i atents a les iniciatives d'acció climàtica.</p>
+            </section>
+            <!-- Secció 3 -->
+            <section class="section-3">
+                <h2>Notícies</h2>
+                <div class="container-articles">
+                    <article>
+                        <figure>
+                            <img src="img/n-greta-thunberg.jpg" class="img-noticia" alt="Greta-Thunberg">
+                            <figcaption>14.11.2021</figcaption>
+                        </figure>
+                        <a href="#" class="titular-noticia">Greta Thunberg lamenta l'acord de la COP26</a>
+                        <p class="entrada-noticia">Bla, bla, bla. Aquesta és la descripció que Greta Thunberg ha fet de l'acord que ha posat fi a la COP26 de Glasgow …</p>
+                        <a href="#" class="enllaç-noticia">Llegir-ne més</a>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="img/n-delhi.jpg" class="img-noticia" alt="Delhi">
+                            <figcaption>13.11.2021</figcaption>
+                        </figure>
+                        <a href="#" class="titular-noticia">L'estat indi de Delhi tanca escoles per la contaminació de l'aire</a>
+                        <p class="entrada-noticia">El Govern ha ordenat el tancament d'escoles, ha paralitzat la construcció i ha decretat l'obligatorietat que els funcionaris treballin des de casa, degut a la contaminació de l'aire …</p>
+                        <a href="#" class="enllaç-noticia">Llegir-ne més</a>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="img/n-estres.jpg" class="img-noticia" alt="Ansietat-climatica">
+                            <figcaption>07.10.2021</figcaption>
+                        </figure>
+                        <a href="#" class="titular-noticia">L'ansietat climàtica: un problema de salut mental</a>
+                        <p class="entrada-noticia">Diversos estudis asseguren que l'escenari apocalíptic que augura el canvi climàtic causa estrès, sobretot en infants i adolescents …</p>
+                        <a href="#" class="enllaç-noticia">Llegir-ne més</a>
+                    </article>
+                </div>
+            </section>
+            <!-- Formulari -->
+            <div class="section-4">
+                <h2>Subscriu-te al nostre butlletí de notícies</h2>
+                <form action="/1.5ºC.php" method="post">
+                    <ul>
+                        <li>
+                            <input type="text" id="nom" name="nom_usuari" placeholder="Nom" pattern="[a-zA-ZáàéèíìïóòúùüÁÀÉÈÍÍÏÓÚÙÜ'-\s]{2,64}" required>
+                        </li>
+                        <li>
+                            <input type="email" id="email" name="email_usuari" placeholder="Correu electrònic" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        </li>
+                        </ul>
+                        <p>INFORMACIÓ SOBRE PROTECCIÓ DE DADES D’<span class="negreta">Un grau i mig. Finalitats</span>: recollida de dades per a l'enviament d'informació. <span class="negreta">Legitimació</span>: Consentiment de l'interessat. <span class="negreta">Destinataris:</span> No estan previstes cessions de dades a tercers, excepte obligació legal. <span class="negreta">Drets</span>: Pot retirar el seu consentiment en qualsevol moment, així com accedir, rectificar, suprimir les seves dades i altres drets dirigint-se a <a href="#" class="enllaç-politica">info@ungrauimig.info</a>. <span class="negreta">Informació Addicional</span>: Pot ampliar la informació en l'enllaç d'<a href="#" class="enllaç-politica">Avís legal</a> i <a href="#" class="enllaç-politica">Política de privacitat</a>.</p>
+                        <input type="checkbox" id=politica-privacitat name="politica_privacitat" value="accept" required>
+                            <label for="política" class="política">He llegit i accepto la política de privacitat</label>
+                        <input type="submit" value="Subscriu-me">
+                    </form>
+                </div>
+        </main>
+        <footer>
+            <div class="peu-pagina">
+                <nav class="menu-legal">
+                    <ul>
+                        <li><a href="#">Sobre nosaltres</a></li>
+                        <li><a href="#">Avís legal</a></li>
+                        <li><a href="#">Política de privactitat</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                    </ul>
+                </nav>
+                <nav class="menu-xarxes">
+                    <ul>
+                        <li><a href="#"><img src="img/twitter.svg"></a> </li>
+                        <li><a href="#"><img src="img/instagram.svg"></a> </li>
+                        <li><a href="#"><img src="img/youtube.svg"></a> </li>
+                    </ul>
+                </nav>
+                <p>Activitat realitzada per Irene Batlle I Capa, per a l'assignatura HTML i CSS. Primer semestre del curs 2021-2022</p>
+            </div>
+        </footer>
+    </body>
+</html>
